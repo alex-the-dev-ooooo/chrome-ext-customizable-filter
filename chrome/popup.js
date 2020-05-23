@@ -5,6 +5,7 @@
 'use strict';
 
   let changeColor = document.getElementById('changeColor');
+  let optionsButton = document.getElementById('go-to-options');
 
   chrome.storage.sync.get('color', function(data) {
     changeColor.style.backgroundColor = data.color;
@@ -19,3 +20,11 @@
             {code: 'document.body.style.backgroundColor = "' + color + '";'});
       });
     };
+
+    optionsButton.onclick = function(element){
+        if (chrome.runtime.openOptionsPage) {
+            chrome.runtime.openOptionsPage();
+          } else {
+            window.open(chrome.runtime.getURL('options.html'));
+          }
+    }

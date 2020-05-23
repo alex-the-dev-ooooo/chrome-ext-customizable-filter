@@ -3,7 +3,7 @@
   "version": "1.0",
   "description": "Customizable text filter for chrome",
   "options_page": "options.html",
-  "permissions": ["activeTab","declarativeContent","storage"],
+  "permissions": ["activeTab","declarativeContent","storage","contextMenus"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
